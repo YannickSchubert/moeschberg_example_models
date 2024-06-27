@@ -1,4 +1,4 @@
-# moeschberg_example_models
+# Moeschberg example models
 
 ## Code Example
 
