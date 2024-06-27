@@ -20,7 +20,7 @@ As [a persona], I want to [ ], so that [ ].
 
 ```mermaid
 sequenceDiagram
-user->>+sentier.dev: give me "inventory" for<br/>3 kWh of electricity in de (URI)
+user->>+sentier.dev: give me "inventory" for<br/>3 kWh of electricity in Germany (glossary:URI)
 sentier.dev->>+glossary: who produces<br/>1 kWh of electricity in de (glossary:URI)?
 glossary->>-sentier.dev: model A (glossary:URI)
 sentier.dev->>+runner: run model A (glossary:URI)
@@ -36,10 +36,30 @@ user->>runner: decision?
 end
 runner->>-sentier.dev: "inventory" of model B
 note over sentier.dev: ...
-sentier.dev->>-user: "inventory" for<br/>3 kWh of electricity in de
+sentier.dev->>-user: "inventory" for<br/>3 kWh of electricity in Germany
 ```
 
 #### User Story 07
+
+```mermaid
+sequenceDiagram
+user->>+sentier.dev: give me "inventory" for<br/>3 kWh of electricity from coal power plant in Germany (glossary:URI)
+sentier.dev->>+glossary: who produces<br/>electricity from coal power plant in Germany (glossary:URI)?
+glossary->>-sentier.dev: model A (glossary:URI)
+rect rgb(191, 223, 255)
+sentier.dev->>+runner instance A: run model A (glossary:URI)
+runner instance A->>sentier.dev: PARTIAL "inventory" of model A<br/>including coal consumed in Germany<br/>excluding some direct emissions
+sentier.dev->>+glossary: who produces<br/>coal consumed in Germany (glossary:URI)?
+glossary->>-sentier.dev: model B (glossary:URI)
+sentier.dev->>+runner instance B: run model B (glossary:URI)
+runner instance B->>runner instance A: specific coal parameters<br/>like content of carbon, sulphur, mercury, etc.
+note right of runner instance A: Should the running instances A and B talk directly to each other?<br/>Or via the orchestrator?
+runner instance B->>-sentier.dev: "inventory" of model B
+runner instance A->>-sentier.dev: FINAL "inventory" of model A
+end
+note over sentier.dev: ...
+sentier.dev->>-user: "inventory" for<br/>3 kWh of electricity from coal power plant in Germany
+```
 
 ## Design choices
 Try and match terms for processes to the latest version (at the time of writing) [European Commission Common Nomenclature ontology](https://showvoc.op.europa.eu/#/datasets/ESTAT_Combined_Nomenclature,_2024_%28CN_2024%29/data)
