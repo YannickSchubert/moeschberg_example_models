@@ -30,7 +30,7 @@ if __name__ == "__main__":
     # TODO: orchestrator should find the model based on the product
 
     model = WindTurbineDesign()
-    model.outputs = [wind_turbine]
+    model.outputs['wind_turbine'] = wind_turbine
     model.run()
 
     print(model.inputs)

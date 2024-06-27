@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict
 
 import windisch as windisch
 
@@ -19,7 +19,7 @@ class WindTurbineDesign(AbstractModel):
     documentation: str = ""  # URI
     model_instance: str = ""  # URI
 
-    inputs = {
+    inputs: Dict[str, Product] = {
         "rotor": Product(
             uri="rotor",
             value=None,
@@ -76,7 +76,7 @@ class WindTurbineDesign(AbstractModel):
         ),
     }
 
-    outputs = {
+    outputs: Dict[str, Product] = {
         "wind_turbine": Product(
             uri="http://data.europa.eu/qw1/prodcom2023/281124",
             value=None,
