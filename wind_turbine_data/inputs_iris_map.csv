@@ -1,15 +1,15 @@
 "activity_name";"IRI"
-"market for sheet rolling, steel";
-"market for wire drawing, copper";
+"market for sheet rolling, steel";"http://data.europa.eu/xsp/cn2024/730021000090"
+"market for wire drawing, copper";"http://data.europa.eu/xsp/cn2024/740800000080"
 "Transformation, to urban, continuously built";
 "treatment of inert waste, inert material landfill";
-"market for cast iron";
-"market for lubricating oil";
-"market for sheet rolling, aluminium";
-"market for steel, chromium steel 18/8";
-"market for concrete, normal";
-"market for epoxy resin, liquid";
-"market for sheet rolling, chromium steel";
+"market for cast iron";"http://data.europa.eu/xsp/cn2024/730021000090"
+"market for lubricating oil";"http://data.europa.eu/xsp/cn2024/271019710010"
+"market for sheet rolling, aluminium";"http://data.europa.eu/xsp/cn2024/760600000080"
+"market for steel, chromium steel 18/8";"http://data.europa.eu/xsp/cn2024/722400000080"
+"market for concrete, normal";"http://data.europa.eu/xsp/cn2024/382450100080"
+"market for epoxy resin, liquid";"http://data.europa.eu/xsp/cn2024/390730000080"
+"market for sheet rolling, chromium steel";"http://data.europa.eu/xsp/cn2024/720241000010"
 "market for steel, low-alloyed";
 "market for waste mineral oil";
 "Occupation, traffic area";
