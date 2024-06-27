@@ -12,6 +12,7 @@ As [a persona], I want to [ ], so that [ ].
 | 04 | model developer                                     | store a model            | I can share it with others                                                                                                                                                                 |   |
 | 05 | model developer from industry                       | store a model            | so that the model can be used to run, but cannot be decompiled, or intellectual property used within the model to be disclosed (note difference from academia/open source model developer) |   |
 | 06 | model developer from academia/open source community | store a model            | so that the model can be opened and inspected (note difference from industry model developer)                                                                                              |   |
+| 07 | model developer | provide a model with dependencies on other "supply" model | the model produces different results depending on its supply chain (e.g. coal power plant emissions depend on where the coal has come from | [sequence diagram](#user-story-07) |
 
 ### Sequence diagrams
 
@@ -38,6 +39,7 @@ note over sentier.dev: ...
 sentier.dev->>-user: "inventory" for<br/>3 kWh of electricity in de
 ```
 
+#### User Story 07
 
 ## Design choices
 Try and match terms for processes to the latest version (at the time of writing) [European Commission Common Nomenclature ontology](https://showvoc.op.europa.eu/#/datasets/ESTAT_Combined_Nomenclature,_2024_%28CN_2024%29/data)
