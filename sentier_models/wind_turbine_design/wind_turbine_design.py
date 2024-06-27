@@ -1,10 +1,9 @@
 from typing import List, Dict
 
-import windisch as windisch
-
 from sentier_models.abstract_model.attribute import Attribute
 from sentier_models.abstract_model.model import AbstractModel
 from sentier_models.abstract_model.product import Product
+from .windisch import windisch
 
 
 class WindTurbineDesign(AbstractModel):
