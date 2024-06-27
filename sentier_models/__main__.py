@@ -1,12 +1,26 @@
+import argparse
+from typing import Dict
+
 from sentier_glossary import GlossaryAPI
 
+from sentier_models import all_models
 from sentier_models.abstract_model.attribute import Attribute
 from sentier_models.abstract_model.product import Product
-from sentier_models.wind_turbine_design.wind_turbine_design import WindTurbineDesign
+
+
+models_by_output_iri: Dict[str, list] = {}
+for model in all_models:
+    for output_name, output_schema in model.model_fields['outputs'].default.items():
+        uri = output_schema.uri
+        if uri not in models_by_output_iri:
+            models_by_output_iri[uri] = []
+        models_by_output_iri[uri].append(model)
+
 
 if __name__ == "__main__":
-
-    search_for = "Wind turbines"
+    parser = argparse.ArgumentParser()
+    parser.add_argument("search_product", type=str, nargs='?', default="Wind turbines", help="Search for a product")
+    search_for = parser.parse_args().search_product
 
     api = GlossaryAPI()
     concepts = [
@@ -14,10 +28,10 @@ if __name__ == "__main__":
         for concept in api.concepts_for_scheme("http://data.europa.eu/qw1/prodcom2023/prodcom2023")
         if "wind turbines" in concept["prefLabel"].lower()
     ]
-    wind_turbine_iri = concepts[0]["iri"]
+    product_iri = concepts[0]["iri"]
 
-    wind_turbine = Product(
-        uri=wind_turbine_iri,
+    product = Product(
+        uri=product_iri,
         value=1,
         unit="piece_unit",
         attributes={
@@ -26,12 +40,21 @@ if __name__ == "__main__":
             "power": Attribute(uri="power", value=200, unit="power_unit"),
         },
     )
-    print(wind_turbine)
 
-    # TODO: orchestrator should find the model based on the product
+    # find model:
+    possible_models = models_by_output_iri[product_iri]
 
-    model = WindTurbineDesign()
-    model.outputs["wind_turbine"] = wind_turbine
-    model.run()
+    # TODO let user choose between found models...
+    selected_model_class = possible_models[0]
 
-    print(model.inputs)
+    # find model output name to use
+    for output_name, output_schema in selected_model_class.model_fields['outputs'].default.items():
+        if output_schema.uri == product_iri:
+            model_output_name = output_name
+            break
+
+    model_instance = selected_model_class()
+    model_instance.outputs[model_output_name] = product
+    model_instance.run()
+
+    print(model_instance.inputs)
