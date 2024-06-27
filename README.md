@@ -6,7 +6,7 @@ As [a persona], I want to [ ], so that [ ].
 
 | id | As                                                  | I want to                | so that                                                                                                                                                                                    |   |
 |----|-----------------------------------------------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
-| 01 | user of the model                                   | be able to run the model | so that I get a calculated inventory or set of calculated parameters out of the model                                                                                                      |   |
+| 01 | user of the model                                   | be able to run the model | so that I get a calculated inventory or set of calculated parameters out of the model                                                                                                      | [sequence diagram](#user-story-01)  |
 | 02 | user of the model                                   | be (at least) informed              | if some hidden allocation rule is being applied in the background for a more-than-one-output-process-model (e.g. how to allocate the "inventory" of a combined heat and power plant towards its co-products heat and electricity)                                                                                | [sequence diagram](#user-story-02)   |
 | 03 | model developer                                     | store a model            | I can reuse it in the future                                                                                                                                                               |   |
 | 04 | model developer                                     | store a model            | I can share it with others                                                                                                                                                                 |   |
@@ -16,7 +16,36 @@ As [a persona], I want to [ ], so that [ ].
 
 ### Sequence diagrams
 
-#### User Story 02
+#### User story 01
+
+```mermaid
+sequenceDiagram
+participant user
+participant sentier.dev
+participant glossary
+participant runner
+participant ancillary models as ancillary models
+note over ancillary models: gap filling<br/>storage<br/>transport<br/>unit conversion<br/>allocation
+user->>+sentier.dev: give me the "inventory" for<br/>1 wind turbine (glossary:URI)<br/>with a nominal power of 2 MW<br/>in Denmark
+sentier.dev->>+glossary: who produces<br/>wind turbine (glossary:URI)?
+glossary->>-sentier.dev: model A (glossary:URI)
+sentier.dev->>+runner: run model A (glossary:URI)
+runner-->ancillary models: optional call?
+runner->>-sentier.dev: "inventory" of model A<br/>including steel (glossary:URI)
+sentier.dev-->ancillary models: optional call
+sentier.dev->>+glossary: who produces<br/>steel (glossary:URI)?
+glossary->>-sentier.dev: model B (glossary:URI)
+sentier.dev->>+runner: run model B (glossary:URI)
+runner-->ancillary models: optional call?
+runner->>-sentier.dev: "inventory" of model B
+sentier.dev-->ancillary models: optional call
+note over sentier.dev: ...
+sentier.dev-->>ancillary models: give me the additional "inventory" for tranport of "inventories"
+ancillary models-->>sentier.dev: additional "inventory" for transport<br/>plus locations of prodution of "inventory" items?
+sentier.dev->>-user: "inventory" for<br/>1 wind turbine (glossary:URI)<br/>with a nominal power of 2 MW<br/>in Denmark
+```
+
+#### User story 02
 
 ```mermaid
 sequenceDiagram
@@ -39,7 +68,7 @@ note over sentier.dev: ...
 sentier.dev->>-user: "inventory" for<br/>3 kWh of electricity in Germany
 ```
 
-#### User Story 07
+#### User story 07
 
 ```mermaid
 sequenceDiagram
