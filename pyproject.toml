@@ -3,9 +3,12 @@ name = "moeschberg_example_models"
 version = "0.1.0"
 description = "A project containing example models for sentier.dev."
 authors = ["Your Name <your.email@example.com>"]
+packages = [{include = "sentier_models"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+sentier-glossary = "^0.5.2"
+pydantic = "^2.7.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
