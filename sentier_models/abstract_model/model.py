@@ -1,8 +1,10 @@
 from typing import List
 
 from sentier_models.abstract_model.product import Product
+from dataclasses import dataclass
 
 
+@dataclass
 class AbstractModel:
     identifier: str
     preflabel: str

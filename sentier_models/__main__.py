@@ -8,6 +8,8 @@ if __name__ == "__main__":
 
     print(api.schemes())
 
+    print(api.semantic_search("piggies", CommonSchemes.cn2024))
+
     wind_turbine = Product(
         uri="wind_turbine",
         value=1,
