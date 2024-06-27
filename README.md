@@ -96,11 +96,24 @@ sentier.dev->>-user: "inventory" for<br/>3 kWh of electricity from coal power pl
 ![sketch of wind turbine example](docs/Figma_wind_turbine.png)
 
 
-## Design choices
-Try and match terms for processes to the latest version (at the time of writing) [European Commission Common Nomenclature ontology](https://showvoc.op.europa.eu/#/datasets/ESTAT_Combined_Nomenclature,_2024_%28CN_2024%29/data)
+# Mapping
+## Design choices / objectives
+The objective for mapping is to try and match terms for processes to the latest version (at the time of writing) [European Commission Combined Nomenclature ontology](https://showvoc.op.europa.eu/#/datasets/ESTAT_Combined_Nomenclature,_2024_%28CN_2024%29/data)
+
+> The Combined Nomenclature (CN) is a tool for classifying goods, set up to meet the requirements both of the Common Customs Tariff and of the EU's external trade statistics. The CN is also used in intra-EU trade statistics.
+*Source: https://taxation-customs.ec.europa.eu/customs-4/calculation-customs-duties/customs-tariff/combined-nomenclature_en*
+
+This tends to only cover physical tangible entities, and tends to exclude non-tangible entities as well as services, that can have significance for environmental or socia Life Cycle Assessment.
+
+Important concepts or entities for environmental life cycle assessment that cannot be expressed with the EU Combined Nomenclature include:
+- land transformation 
+- electricity generation, transformation or transmission
+- services or activities, like welding
+
+This is not an exhaustive list and (hopefully) subject to change
 
 # Sources / References
 - [LCA_WIND_DK](https://github.com/romainsacchi/LCA_WIND_DK) a model of wind turbines in Denmark which gives the material inputs required (concrete, steel, fibreglass, etc)
 - [windsch](https://github.com/romainsacchi/windisch) a model for the calculation of the masses of components (the nacelle, foundation, blades, etc) of a wind turbine given its power rating. 
-- [European Commission Common Nomenclature 2024](https://showvoc.op.europa.eu/#/datasets/ESTAT_Combined_Nomenclature,_2024_%28CN_2024%29/data) an ontology for processes
+- [European Commission Common Nomenclature 2024 visual explorer](https://showvoc.op.europa.eu/#/datasets/ESTAT_Combined_Nomenclature,_2024_%28CN_2024%29/data) an ontology for processes
 
