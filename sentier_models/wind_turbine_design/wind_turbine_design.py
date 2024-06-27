@@ -1,3 +1,5 @@
+from typing import List
+
 import windisch as windisch
 
 from sentier_models.abstract_model.attribute import Attribute
@@ -6,6 +8,16 @@ from sentier_models.abstract_model.product import Product
 
 
 class WindTurbineDesign(AbstractModel):
+
+    identifier: str = "wind_turbine_design"
+    preflabel: str = "Wind Turbine Design"
+    version: str = "0.1"  # URI
+    previous_version: str = "0.0"  # URI
+    license: str = "CC-BY"  # URI
+    source: str = ""  # URI
+    authors: List[str] = []  # URI
+    documentation: str = ""  # URI
+    model_instance: str = ""  # URI
 
     inputs = {
         "rotor": Product(
@@ -66,7 +78,7 @@ class WindTurbineDesign(AbstractModel):
 
     outputs = {
         "wind_turbine": Product(
-            uri="wind_turbine",
+            uri="http://data.europa.eu/qw1/prodcom2023/281124",
             value=None,
             unit="mass_unit",
             attributes=[
@@ -88,15 +100,8 @@ class WindTurbineDesign(AbstractModel):
 
         wt = windisch.WindTurbineModel(array)
         wt.set_all()
-        list_mass = [
-            "rotor mass",
-            "nacelle mass",
-            "tower mass",
-            "electronics mass",
-            "cable mass",
-            "foundation mass",
-        ]
+        input_items = self.inputs.keys()
 
-        for mass in list_mass:
-            print(mass)
-            print(wt[mass].item())
+        for input in input_items:
+            self.inputs[input].value = wt[f"{input} mass"].item()
+            print(wt[[f"{input} mass"]].item())
