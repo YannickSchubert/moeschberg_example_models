@@ -62,6 +62,11 @@ note over sentier.dev: ...
 sentier.dev->>-user: "inventory" for<br/>3 kWh of electricity from coal power plant in Germany
 ```
 
+## Wind turbine example
+
+![sketch of wind turbine example](docs/Figma_wind_turbine.png)
+
+
 ## Design choices
 Try and match terms for processes to the latest version (at the time of writing) [European Commission Common Nomenclature ontology](https://showvoc.op.europa.eu/#/datasets/ESTAT_Combined_Nomenclature,_2024_%28CN_2024%29/data)
 
