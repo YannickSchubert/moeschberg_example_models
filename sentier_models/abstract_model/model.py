@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict
 
 from sentier_models.abstract_model.product import Product
 from dataclasses import dataclass, field
@@ -16,8 +16,8 @@ class AbstractModel:
     documentation: str = ""  # URI
     model_instance: str = ""  # URI
 
-    inputs: List[Product] = field(default_factory=lambda: [])
-    outputs: List[Product] = field(default_factory=lambda: [])
+    inputs: Dict[str, Product] = field(default_factory=lambda: {})
+    outputs: Dict[str, Product] = field(default_factory=lambda: {})
 
     def run(self):
         pass
