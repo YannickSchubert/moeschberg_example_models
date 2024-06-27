@@ -14,7 +14,7 @@ class AbstractUnitProcess(BaseModel):
     source: str = Field("", constant=True)  # URI
     authors: List[str] = Field([], constant=True)  # URI
     documentation: str = Field("", constant=True)  # URI
-    model_instance: str = Field("", constant=True)  # URI
+    instance: str = Field("", constant=True)  # URI
 
     inputs: Dict[str, Product] = Field(default={})
     outputs: Dict[str, Product] = Field(default={})

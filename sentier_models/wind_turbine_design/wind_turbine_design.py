@@ -18,7 +18,7 @@ class WindTurbineDesign(AbstractUnitProcess):
     source: str = Field("", constant=True)  # URI
     authors: List[str] = Field(["test_author"], constant=True)  # URI
     documentation: str = Field("", constant=True)  # URI
-    model_instance: str = Field("", constant=True)  # URI
+    instance: str = Field("", constant=True)  # URI
 
     inputs: Dict[str, Product] = Field(
         {
