@@ -1,16 +1,21 @@
 # moeschberg_example_models
 
 ## User stories
+
+As [a persona], I want to [ ], so that [ ].
+
 | id | As                                                  | I want to                | so that                                                                                                                                                                                    |   |
 |----|-----------------------------------------------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
 | 01 | user of the model                                   | be able to run the model | so that I get a calculated inventory or set of calculated parameters out of the model                                                                                                      |   |
-| 02 | user of the model                                   | be informed              | if some hidden allocation rule is being applied in the background for a more-than-one-output-process-model.                                                                                |   |
+| 02 | user of the model                                   | be informed              | if some hidden allocation rule is being applied in the background for a more-than-one-output-process-model.                                                                                | [sequence diagram](#user-story-02)   |
 | 03 | model developer                                     | store a model            | I can reuse it in the future                                                                                                                                                               |   |
 | 04 | model developer                                     | store a model            | I can share it with others                                                                                                                                                                 |   |
 | 05 | model developer from industry                       | store a model            | so that the model can be used to run, but cannot be decompiled, or intellectual property used within the model to be disclosed (note difference from academia/open source model developer) |   |
 | 06 | model developer from academia/open source community | store a model            | so that the model can be opened and inspected (note difference from industry model developer)                                                                                              |   |
 
-### Sequence diagram for User Story 02
+### Sequence diagrams
+
+#### User Story 02
 
 ```mermaid
 sequenceDiagram
