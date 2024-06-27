@@ -15,20 +15,20 @@
 "Occupation, traffic area";
 "market for diesel, burned in building machine";
 "market for electricity, high voltage";
-"market for copper";
-"market for waste rubber, unspecified";
-"market for waste polyethylene/polypropylene product";
-"market for scrap steel";
+"market for copper";"http://data.europa.eu/xsp/cn2017/740021000090"
+"market for waste rubber, unspecified";"http://data.europa.eu/xsp/cn2017/400300000080"
+"market for waste polyethylene/polypropylene product";"http://data.europa.eu/xsp/cn2017/391500000010";">"
+"market for scrap steel";"http://data.europa.eu/xsp/cn2024/720400000080";"~"
 "Transformation, to industrial area";
-"market for waste polyvinylchloride product";http://data.europa.eu/xsp/cn2017/391530000080
+"market for waste polyvinylchloride product";"http://data.europa.eu/xsp/cn2017/391530000080"
 "market for glass fibre reinforced plastic, polyamide, injection moulded";"http://data.europa.eu/xsp/cn2024/701900000080"
-"market for aluminium, wrought alloy";http://data.europa.eu/xsp/cn2024/760612000080
-"market for waste polypropylene";http://data.europa.eu/xsp/cn2024/550510700080
-"market for polyvinylchloride, bulk polymerised";http://data.europa.eu/xsp/cn2017/392043000010
-"market for polypropylene, granulate";http://data.europa.eu/xsp/cn2024/390100000080
-"market for welding, arc, steel";http://data.europa.eu/qw1/prodcom2023/27903172
-"Occupation, industrial area";http://data.europa.eu/oxm/lucas2022/U220
+"market for aluminium, wrought alloy";"http://data.europa.eu/xsp/cn2024/760612000080"
+"market for waste polypropylene";"http://data.europa.eu/xsp/cn2017/391500000010";">"
+"market for polyvinylchloride, bulk polymerised";"http://data.europa.eu/xsp/cn2017/392043000010";">"
+"market for polypropylene, granulate";"http://data.europa.eu/xsp/cn2017/390210000080";">"
+"market for welding, arc, steel";"http://data.europa.eu/qw1/prodcom2023/27903172"
+"Occupation, industrial area";"http://data.europa.eu/oxm/lucas2022/U220"
 "Transformation, from pasture and meadow";
-"market for waste reinforced concrete";http://data.europa.eu/ux2/nace2.1/4399
-"market for polyethylene, high density, granulate";http://data.europa.eu/xsp/cn2024/390100000080
+"market for waste reinforced concrete";"http://data.europa.eu/ux2/nace2.1/4399"
+"market for polyethylene, high density, granulate";"http://data.europa.eu/xsp/cn2017/390210000080"
 "market for transport, passenger car";"http://data.europa.eu/xsp/cn2024/870300000080"
