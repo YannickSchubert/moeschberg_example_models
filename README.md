@@ -1,5 +1,8 @@
 # Moeschberg example models
 
+This is the result of subgroup "conceptual prototype/model implementation/user stories" from Sentier.dev Möschberg Mini Hackathon in June 2024. See more details at:
+https://github.com/sentier-dev/sentier.dev/discussions/23
+
 ## Code Example
 
 In sentier_models/ we provided an example where a user 
