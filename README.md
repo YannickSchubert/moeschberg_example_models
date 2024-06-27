@@ -3,7 +3,7 @@
 This is the result of subgroup "conceptual prototype/model implementation/user stories" from Sentier.dev Möschberg Mini Hackathon in June 2024. See more details at:
 https://github.com/sentier-dev/sentier.dev/discussions/23
 
-## Code Example
+## Code Example: wind turbine model
 
 In sentier_models/ we provided an example where a user 
 can query the Wind-Turbine-Design model (see [windsch](https://github.com/romainsacchi/windisch)). Our minimalistic orchestrator will look-up the user-provided label (e.g. "wind turbines") in the sentier-glossary. Based on the URI of this glossary-item it will search through implemented models (in this case only the Wind-turbine-design-model) and tries to find a match based on the available outputs of the models. The models themselves are defined as pydantic classes that have a set of meta-parameters as well as inputs, outputs and a run-method. The inputs and outputs are dictionaries of Products where each Product can have a dict of additional Attributes (see also the figma-diagram below). To execute install the dependencies and execute the example you can run
@@ -12,6 +12,7 @@ can query the Wind-Turbine-Design model (see [windsch](https://github.com/romain
 poetry install
 poetry run python -m sentier_models
 ```
+![sketch of wind turbine example](docs/Figma_wind_turbine.png)
 
 ## User stories
 
@@ -103,11 +104,6 @@ end
 note over sentier.dev: ...
 sentier.dev->>-user: "inventory" for<br/>3 kWh of electricity from coal power plant in Germany
 ```
-
-## Wind turbine example
-
-![sketch of wind turbine example](docs/Figma_wind_turbine.png)
-
 
 # Mapping
 ## Design choices / objectives
