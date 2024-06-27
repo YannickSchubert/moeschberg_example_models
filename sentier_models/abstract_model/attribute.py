@@ -1,9 +1,9 @@
 from dataclasses import dataclass
-from typing import Union
+from typing import Optional, Union
 
 
 @dataclass
 class Attribute:
     uri: str  # URI
-    value: Union[float, str, int]
+    value: Optional[Union[float, str, int]]
     unit: str  # URI
