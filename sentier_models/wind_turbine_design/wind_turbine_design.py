@@ -1,3 +1,5 @@
+import windisch as windisch
+
 from sentier_models.abstract_model.attribute import Attribute
 from sentier_models.abstract_model.model import AbstractModel
 from sentier_models.abstract_model.product import Product
@@ -75,4 +77,26 @@ class WindTurbineDesign(AbstractModel):
     }
 
     def run(self):
-        pass
+        windisch.update_input_parameters()
+        tip = windisch.TurbinesInputParameters()
+        tip.sizes = [50]
+        tip.application = ["offshore"]
+        tip.years = [2000]
+        tip.static()
+
+        _, array = windisch.fill_xarray_from_input_parameters(tip)
+
+        wt = windisch.WindTurbineModel(array)
+        wt.set_all()
+        list_mass = [
+            "rotor mass",
+            "nacelle mass",
+            "tower mass",
+            "electronics mass",
+            "cable mass",
+            "foundation mass",
+        ]
+
+        for mass in list_mass:
+            print(mass)
+            print(wt[mass].item())
