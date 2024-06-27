@@ -49,6 +49,7 @@ glossary->>-sentier.dev: model A (glossary:URI)
 rect rgb(191, 223, 255)
 sentier.dev->>+runner instance A: run model A (glossary:URI)
 runner instance A->>sentier.dev: PARTIAL "inventory" of model A<br/>including coal consumed in Germany<br/>excluding some direct emissions
+note right of runner instance A: model A is dependent on the<br/>"inventory" and related attributes of Model B
 sentier.dev->>+glossary: who produces<br/>coal consumed in Germany (glossary:URI)?
 glossary->>-sentier.dev: model B (glossary:URI)
 sentier.dev->>+runner instance B: run model B (glossary:URI)
