@@ -1,34 +1,34 @@
-"activity_name";"IRI"
-"market for sheet rolling, steel";"http://data.europa.eu/xsp/cn2024/730021000090"
-"market for wire drawing, copper";"http://data.europa.eu/xsp/cn2024/740800000080"
-"Transformation, to urban, continuously built";
-"treatment of inert waste, inert material landfill";
-"market for cast iron";"http://data.europa.eu/xsp/cn2024/730021000090"
-"market for lubricating oil";"http://data.europa.eu/xsp/cn2024/271019710010"
-"market for sheet rolling, aluminium";"http://data.europa.eu/xsp/cn2024/760600000080"
-"market for steel, chromium steel 18/8";"http://data.europa.eu/xsp/cn2024/722400000080"
-"market for concrete, normal";"http://data.europa.eu/xsp/cn2024/382450100080"
-"market for epoxy resin, liquid";"http://data.europa.eu/xsp/cn2024/390730000080"
-"market for sheet rolling, chromium steel";"http://data.europa.eu/xsp/cn2024/720241000010"
-"market for steel, low-alloyed";
-"market for waste mineral oil";
-"Occupation, traffic area";
-"market for diesel, burned in building machine";
-"market for electricity, high voltage";
-"market for copper";"http://data.europa.eu/xsp/cn2017/740021000090"
-"market for waste rubber, unspecified";"http://data.europa.eu/xsp/cn2017/400300000080"
-"market for waste polyethylene/polypropylene product";"http://data.europa.eu/xsp/cn2017/391500000010";">"
-"market for scrap steel";"http://data.europa.eu/xsp/cn2024/720400000080";"~"
-"Transformation, to industrial area";
-"market for waste polyvinylchloride product";"http://data.europa.eu/xsp/cn2017/391530000080"
-"market for glass fibre reinforced plastic, polyamide, injection moulded";"http://data.europa.eu/xsp/cn2024/701900000080"
-"market for aluminium, wrought alloy";"http://data.europa.eu/xsp/cn2024/760612000080"
-"market for waste polypropylene";"http://data.europa.eu/xsp/cn2017/391500000010";">"
-"market for polyvinylchloride, bulk polymerised";"http://data.europa.eu/xsp/cn2017/392043000010";">"
-"market for polypropylene, granulate";"http://data.europa.eu/xsp/cn2017/390210000080";">"
-"market for welding, arc, steel";"http://data.europa.eu/qw1/prodcom2023/27903172"
-"Occupation, industrial area";"http://data.europa.eu/oxm/lucas2022/U220"
-"Transformation, from pasture and meadow";
-"market for waste reinforced concrete";"http://data.europa.eu/ux2/nace2.1/4399"
-"market for polyethylene, high density, granulate";"http://data.europa.eu/xsp/cn2017/390210000080"
-"market for transport, passenger car";"http://data.europa.eu/xsp/cn2024/870300000080"
+activity_name; IRI; MatchCondition
+market for sheet rolling, steel;http://data.europa.eu/xsp/cn2024/730021000090;
+market for wire drawing, copper;http://data.europa.eu/xsp/cn2024/740800000080;
+Transformation, to urban, continuously built;;
+treatment of inert waste, inert material landfill;;
+market for cast iron;http://data.europa.eu/xsp/cn2024/730021000090;
+market for lubricating oil;http://data.europa.eu/xsp/cn2024/271019710010;
+market for sheet rolling, aluminium;http://data.europa.eu/xsp/cn2024/760600000080;
+market for steel, chromium steel 18/8;http://data.europa.eu/xsp/cn2024/722400000080;
+market for concrete, normal;http://data.europa.eu/xsp/cn2024/382450100080;
+market for epoxy resin, liquid;http://data.europa.eu/xsp/cn2024/390730000080;
+market for sheet rolling, chromium steel;http://data.europa.eu/xsp/cn2024/720241000010;
+market for steel, low-alloyed;http://data.europa.eu/xsp/cn2024/722400000080;
+market for waste mineral oil;;
+Occupation, traffic area;;
+market for diesel, burned in building machine;;
+market for electricity, high voltage;;
+market for copper;http://data.europa.eu/xsp/cn2017/740021000090;
+market for waste rubber, unspecified;http://data.europa.eu/xsp/cn2017/400300000080;
+market for waste polyethylene/polypropylene product;http://data.europa.eu/xsp/cn2017/391500000010;>
+market for scrap steel;http://data.europa.eu/xsp/cn2024/720400000080;~
+Transformation, to industrial area;;
+market for waste polyvinylchloride product;http://data.europa.eu/xsp/cn2017/391530000080;
+market for glass fibre reinforced plastic, polyamide, injection moulded;http://data.europa.eu/xsp/cn2024/701900000080;
+market for aluminium, wrought alloy;http://data.europa.eu/xsp/cn2024/760612000080;
+market for waste polypropylene;http://data.europa.eu/xsp/cn2017/391500000010;>
+market for polyvinylchloride, bulk polymerised;http://data.europa.eu/xsp/cn2017/392043000010;>
+market for polypropylene, granulate;http://data.europa.eu/xsp/cn2017/390210000080;>
+market for welding, arc, steel;http://data.europa.eu/qw1/prodcom2023/27903172;
+Occupation, industrial area;http://data.europa.eu/oxm/lucas2022/U220;
+Transformation, from pasture and meadow;;
+market for waste reinforced concrete;http://data.europa.eu/ux2/nace2.1/4399;
+market for polyethylene, high density, granulate;http://data.europa.eu/xsp/cn2017/390210000080;
+market for transport, passenger car;http://data.europa.eu/xsp/cn2024/870300000080;
