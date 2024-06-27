@@ -76,7 +76,7 @@ class WindTurbineDesign(AbstractModel):
 
     outputs = {
         "wind_turbine": Product(
-            uri="wind_turbine",
+            uri="http://data.europa.eu/qw1/prodcom2023/281124",
             value=None,
             unit="mass_unit",
             attributes=[
