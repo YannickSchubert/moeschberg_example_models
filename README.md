@@ -98,7 +98,9 @@ sentier.dev->>-user: "inventory" for<br/>3 kWh of electricity from coal power pl
 
 # Mapping
 ## Design choices / objectives
-The objective for mapping is to try and match terms for processes to the latest version (at the time of writing) [European Commission Combined Nomenclature ontology](https://showvoc.op.europa.eu/#/datasets/ESTAT_Combined_Nomenclature,_2024_%28CN_2024%29/data)
+The objective for mapping is to try and match terms for processes to the latest version (at the time of writing) [European Commission Combined Nomenclature ontology](https://showvoc.op.europa.eu/#/datasets/ESTAT_Combined_Nomenclature,_2024_%28CN_2024%29/data).
+
+The mapping produced can be found in `wind_turbine_data/inputs_iris_map.csv`. The schema for the mapping is to be found in `schema_mapping.md`
 
 > The Combined Nomenclature (CN) is a tool for classifying goods, set up to meet the requirements both of the Common Customs Tariff and of the EU's external trade statistics. The CN is also used in intra-EU trade statistics.
 *Source: https://taxation-customs.ec.europa.eu/customs-4/calculation-customs-duties/customs-tariff/combined-nomenclature_en*
