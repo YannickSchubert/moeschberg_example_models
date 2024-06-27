@@ -9,6 +9,10 @@ packages = [{include = "sentier_models"}]
 python = "^3.11"
 sentier-glossary = "^0.5.2"
 pydantic = "^2.7.4"
+numpy = "^2.0.0"
+klausen = "^0.1.1"
+xarray = "^2024.6.0"
+openpyxl = "^3.1.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

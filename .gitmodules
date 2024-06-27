@@ -1,0 +1,3 @@
+[submodule "sentier_models/wind_turbine_design/windisch"]
+	path = sentier_models/wind_turbine_design/windisch
+	url = https://github.com/romainsacchi/windisch.git
