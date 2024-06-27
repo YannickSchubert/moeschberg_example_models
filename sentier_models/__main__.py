@@ -19,11 +19,12 @@ if __name__ == "__main__":
     wind_turbine = Product(
         uri=wind_turbine_iri,
         value=1,
-        unit="mass_unit",
-        attributes=[
-            Attribute(uri="power", value=1, unit="mass_unit"),
-            Attribute(uri="location", value="denmark", unit="location"),
-        ],
+        unit="piece_unit",
+        attributes={
+            "location": Attribute(uri="location", value="denmark", unit="location"),
+            "application": Attribute(uri="offshore", value="offshore", unit="categorial"),
+            "power": Attribute(uri="power", value=200, unit="power_unit"),
+        },
     )
     print(wind_turbine)
 

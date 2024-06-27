@@ -2,7 +2,7 @@ from typing import Dict, List
 
 from pydantic import Field
 
-import sentier_models.wind_turbine_design.windisch as windisch
+import sentier_models.wind_turbine_design.windisch.windisch as windisch
 from sentier_models.abstract_model.abstract_unit_process import AbstractUnitProcess
 from sentier_models.abstract_model.attribute import Attribute
 from sentier_models.abstract_model.product import Product
@@ -26,46 +26,46 @@ class WindTurbineDesign(AbstractUnitProcess):
                 uri="rotor",
                 value=None,
                 unit="mass_unit",
-                attributes=[
-                    Attribute(uri="location", value=None, unit="location"),
-                    Attribute(uri="transport_supplied", value=False, unit="boolean"),
-                ],
+                attributes={
+                    "location": Attribute(uri="location", value=None, unit="location"),
+                    "transport_supplied": Attribute(uri="transport_supplied", value=False, unit="boolean"),
+                },
             ),
             "nacelle": Product(
                 uri="nacelle",
                 value=None,
                 unit="mass_unit",
-                attributes=[
-                    Attribute(uri="location", value=None, unit="location"),
-                    Attribute(uri="transport_supplied", value=False, unit="boolean"),
-                ],
+                attributes={
+                    "location": Attribute(uri="location", value=None, unit="location"),
+                    "transport_supplied": Attribute(uri="transport_supplied", value=False, unit="boolean"),
+                },
             ),
             "tower": Product(
                 uri="tower",
                 value=None,
                 unit="mass_unit",
-                attributes=[
-                    Attribute(uri="location", value=None, unit="location"),
-                    Attribute(uri="transport_supplied", value=False, unit="boolean"),
-                ],
+                attributes={
+                    "location": Attribute(uri="location", value=None, unit="location"),
+                    "transport_supplied": Attribute(uri="transport_supplied", value=False, unit="boolean"),
+                },
             ),
             "electronics": Product(
                 uri="electronics",
                 value=None,
                 unit="mass_unit",
-                attributes=[
-                    Attribute(uri="location", value=None, unit="location"),
-                    Attribute(uri="transport_supplied", value=None, unit="boolean"),
-                ],
+                attributes={
+                    "location": Attribute(uri="location", value=None, unit="location"),
+                    "transport_supplied": Attribute(uri="transport_supplied", value=False, unit="boolean"),
+                },
             ),
             "cable": Product(
                 uri="cable",
                 value=None,
                 unit="mass_unit",
-                attributes=[
-                    Attribute(uri="location", value=None, unit="location"),
-                    Attribute(uri="transport_supplied", value=None, unit="boolean"),
-                ],
+                attributes={
+                    "location": Attribute(uri="location", value=None, unit="location"),
+                    "transport_supplied": Attribute(uri="transport_supplied", value=False, unit="boolean"),
+                },
             ),
             "foundation": Product(
                 uri="foundation",
@@ -73,7 +73,7 @@ class WindTurbineDesign(AbstractUnitProcess):
                 unit="mass_unit",
                 attributes={
                     "location": Attribute(uri="location", value=None, unit="location"),
-                    "transport_supplied": Attribute(uri="transport_supplied", value=None, unit="boolean"),
+                    "transport_supplied": Attribute(uri="transport_supplied", value=False, unit="boolean"),
                 },
             ),
         }
@@ -84,9 +84,10 @@ class WindTurbineDesign(AbstractUnitProcess):
             "wind_turbine": Product(
                 uri="http://data.europa.eu/qw1/prodcom2023/281124",
                 value=None,
-                unit="mass_unit",
+                unit="piece_unit",
                 attributes={
                     "power": Attribute(uri="power", value=None, unit="mass_unit"),
+                    "application": Attribute(uri="offshore", value=None, unit="categorial"),
                     "location": Attribute(uri="location", value=None, unit="location"),
                 },
             )
@@ -96,9 +97,9 @@ class WindTurbineDesign(AbstractUnitProcess):
     def run(self):
         windisch.update_input_parameters()
         tip = windisch.TurbinesInputParameters()
-        tip.sizes = [50]
-        tip.application = ["offshore"]
-        tip.years = [2000]
+        tip.sizes = [self.outputs["wind_turbine"].attributes["power"].value]
+        tip.application = [self.outputs["wind_turbine"].attributes["application"].value]
+        tip.years = [2000]  # not an input for the moment
         tip.static()
 
         _, array = windisch.fill_xarray_from_input_parameters(tip)
@@ -109,3 +110,4 @@ class WindTurbineDesign(AbstractUnitProcess):
 
         for input in input_items:
             self.inputs[input].value = wt[f"{input} mass"].item()
+            self.inputs[input].attributes["location"].value = self.outputs["wind_turbine"].attributes["location"].value
