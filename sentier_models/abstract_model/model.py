@@ -1,6 +1,6 @@
 from typing import List
 
-from models.abstract_model.product import Product
+from sentier_models.abstract_model.product import Product
 
 
 class AbstractModel:
@@ -17,6 +17,5 @@ class AbstractModel:
     inputs: List[Product]
     outputs: List[Product]
 
-
-def run():
-    pass
+    def run():
+        pass

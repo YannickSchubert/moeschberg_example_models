@@ -1,6 +1,6 @@
 from typing import List, Union
 
-from models.abstract_model.attribute import Attribute
+from sentier_models.abstract_model.attribute import Attribute
 
 
 class Product:
