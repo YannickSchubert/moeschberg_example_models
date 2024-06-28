@@ -9,6 +9,8 @@ In sentier_models/ we provided an example where a user
 can query the Wind-Turbine-Design model (see [windsch](https://github.com/romainsacchi/windisch)). Our minimalistic orchestrator will look-up the user-provided label (e.g. "wind turbines") in the sentier-glossary. Based on the URI of this glossary-item it will search through implemented models (in this case only the Wind-turbine-design-model) and tries to find a match based on the available outputs of the models. The models themselves are defined as pydantic classes that have a set of meta-parameters as well as inputs, outputs and a run-method. The inputs and outputs are dictionaries of Products where each Product can have a dict of additional Attributes (see also the figma-diagram below). To execute install the dependencies and execute the example you can run
 
 ```sh
+git submodule init
+git submodule update
 poetry install
 poetry run python -m sentier_models
 ```
